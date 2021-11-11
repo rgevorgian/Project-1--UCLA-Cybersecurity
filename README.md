@@ -36,13 +36,13 @@ Integrating an ELK server allows users to easily monitor the vulnerable VMs for 
 The configuration details of each machine may be found below.
 _Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdown_tables) to add/remove values from the table_.
 
-| Name     | Function |        IP Address           | Operating System |
+| Name     | Function | IP Address | Operating System |
 |----------|----------|------------|------------------|
-| Jump Box | Gateway  |        | 10.1.0.4   | Linux: Ubuntu 18.04 <br> (*1 vCPU 1GB RAM*) |           
-| WEBVM1   | DVWA     |        | 10.1.0.7   | Linux: Ubuntu 18.04 <br> (*1 vCPU 2GB RAM*) |           
-| WEBVM2   | DVWA     |        | 10.1.0.8   | Linux: Ubuntu 18.04 <br> (*1 vCPU 2GB RAM*) |
-| WEBVM3   |  DVWA    |        | 10.1.0.5   | Linux: Ubuntu 18.04 <br> (*1 VCPU 1GB RAM*) |           
-| ELKVM    | ELK Stack         | 10.0.0.4   | Linux: Ubuntu 18.04 <br> (*2 vCPU 8GB RAM*) |           
+| Jump Box | Gateway  |  10.1.0.4   | Linux: Ubuntu 18.04 <br> (*1 vCPU 1GB RAM*) |           
+| WEBVM1   | DVWA     |  10.1.0.7   | Linux: Ubuntu 18.04 <br> (*1 vCPU 2GB RAM*) |           
+| WEBVM2   | DVWA     |  10.1.0.8   | Linux: Ubuntu 18.04 <br> (*1 vCPU 2GB RAM*) |
+| WEBVM3   |  DVWA    |  10.1.0.5   | Linux: Ubuntu 18.04 <br> (*1 VCPU 1GB RAM*) |           
+| ELKVM    | ELK Stack   10.0.0.4   | Linux: Ubuntu 18.04 <br> (*2 vCPU 8GB RAM*) |           
 
 ### Access Policies
 
