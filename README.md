@@ -39,17 +39,22 @@ _Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdow
 
 | Name     | Function | IP Address | Operating System |
 |----------|----------|------------|------------------|
-| Jump Box | Gateway  | 10.1.0.4   | Linux            |
-| WEBVM1   | DVWA     | 10.1.0.7   | Linux            |
-| WEBVM2   | DVWA     | 10.1.0.8   | Linux            |
-| ELKVM    | ELK      | 10.0.0.4   | Linux            |
+| Jump Box | Gateway        | 10.1.0.4   | Linux: Ubuntu 18.04 <br> (*1 vCPU 1GB RAM*) |           
+| WEBVM1   | DVWA           | 10.1.0.7   | Linux: Ubuntu 18.04 <br> (*1 vCPU 2GB RAM*) |           
+| WEBVM2   | DVWA           | 10.1.0.8   | Linux: Ubuntu 18.04 <br> (*1 VCPU 2GB RAM*) |           
+| ELKVM    | ELK Stack      | 10.0.0.4   | Linux: Ubuntu 18.04 <br> (*2 vCPU 8GB RAM*) |           
 
 ### Access Policies
 
 The machines on the internal network are not exposed to the public Internet. 
 
-Only the Jump box machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
-- 20.112.74.83, 20.83.104.100
+Only the Jumpbox/Ansible VM machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
+- My local machines IP (Address) (What's my IP)
+- Machines within the network can only be accessed by the Jump Box:
+- 
+- Jump Box
+- Public IP address : 20.112.74.83
+- Private IP address: 10.1.0.4
 
 Machines within the network can only be accessed by Jump box.
 - Which machine did you allow to access your ELK VM? What was its IP address? 23.240.176.106 
