@@ -4,7 +4,6 @@
 
 The files in this repository were used to configure the network depicted below.
 
-![TODO: Update the path with the name of your diagram](Images/diagram_filename.png)
 
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to recreate the entire deployment. Accessable below are select portions of the YAML Playbook files, which can be used to install only certain pieces of the ELK stack in Azure, such as Filebeat\.
 
@@ -41,7 +40,8 @@ _Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdow
 |----------|----------|------------|------------------|
 | Jump Box | Gateway        | 10.1.0.4   | Linux: Ubuntu 18.04 <br> (*1 vCPU 1GB RAM*) |           
 | WEBVM1   | DVWA           | 10.1.0.7   | Linux: Ubuntu 18.04 <br> (*1 vCPU 2GB RAM*) |           
-| WEBVM2   | DVWA           | 10.1.0.8   | Linux: Ubuntu 18.04 <br> (*1 VCPU 2GB RAM*) |           
+| WEBVM2   | DVWA           | 10.1.0.8   | Linux: Ubuntu 18.04 <br> (*1 vCPU 2GB RAM*) |
+| WEBVM3     DVWA           | 10.1.0.8   | Linux: Ubuntu 18.04 <br> (*1 VCPU 1GB RAM*) |           
 | ELKVM    | ELK Stack      | 10.0.0.4   | Linux: Ubuntu 18.04 <br> (*2 vCPU 8GB RAM*) |           
 
 ### Access Policies
@@ -89,26 +89,25 @@ The following screenshot displays the result of running `docker ps` after succes
 
 ### Target Machines & Beats
 This ELK server is configured to monitor the following machines:
-- List the IP addresses of the machines you are monitoring- 10.1.0.4, 10.0.0.5
+- DVWA-1 (10.1.0.7)
+- DVWA-2 (10.1.0.8)
+- DVWA-3 (10.1.0.5)
 
 We have installed the following Beats on these machines:
-- Specify which Beats you successfully installed - Filebeat, and Metricbeat
+- DVWA-1 (Filebeat & Metricbeat)
+- DVWA-2 (Filebeat & Metricbeat)
+- DVWA-3 (Filebeat & Metricbeat)
 
 These Beats allow us to collect the following information from each machine:
--In 1-2 sentences, explain what kind of data each beat collects, and provide 1 example of what you expect to see. E.g., `Winlogbeat` collects Windows logs, which we use to track user logon events, etc._ filebeat monitors the log files, collects log events, and forwards them either to Elasticsearch or Logstash for indexing.
-Metricbeat takes teh metrics and statistics that it collects and ships them to the output that you specify. Metricbeat helps you monitor your servers by collecting metrics from the system and services running on the server.
+-Filebeat (collects log data)
+-Metricbeat (collects data from system usage)
+
 
 ### Using the Playbook
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
 
 SSH into the control node and follow the steps below:
-- Copy the _____ file to _____.
-- Update the _____ file to include...
-- Run the playbook, and navigate to ____ to check that the installation worked as expected.
+- Copy the _ELK-Install.YML file to the /etc/ansible/roles directory.
+- Update the hosts file to include the name and IP address of the server you wish to install ELK on
+- Run the playbook, and navigate to http://20.86.153.174:5601/app/kibana to check that the installation worked as expected.
 
-_TODO: Answer the following questions to fill in the blanks:_
-- _Which file is the playbook? Where do you copy it?_
-- _Which file do you update to make Ansible run the playbook on a specific machine? How do I specify which machine to install the ELK server on versus which to install Filebeat on?_
-- _Which URL do you navigate to in order to check that the ELK server is running?
-
-_As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc._
