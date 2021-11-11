@@ -28,11 +28,11 @@ The main purpose of this network is to expose a load-balanced and monitored inst
 
 Load balancing ensures that the application will be highly available, in addition to restricting access to the network.
 - What aspect of security do load balancers protect? What is the advantage of a jump box?_ The off-loading function of a load balancers protect the availability of services by ensuring network traffic is distributed effectively and evenly. If one DVWA VM goes down, the other two will pick up. Moreover, Load balancers defend an organization against distributed denial-of-service (DDoS) attacks.
-- A jump box is a secure computer that all admins first connect to before launching any administrative task or use an origination point to connect to other servers or untrusted environments.
+- A jump box is secure and functions as a gateway to private servers. It is used as an origination point to connect other servers and untrusted environments.
 
 Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the data, and system logs.
-- What does Filebeat watch for? Filebeat monitors the log files or locations that you specify, collects  log events, and forwards them either to Elasticsearch or Logstash for indexing
-- What does Metricbeat record? Metricbeat helps monitor ones servers by collecting metrics from the system and services running on the server.
+- What does Filebeat watch for? Filebeat watches for specific log files and sends them to ELK (Elasicsearch) for logging and review
+- What does Metricbeat record? Metricbeat helps monitor ones servers by collecting metrics from the system and services running on the server, and sends that data to ELK (Elasticsearch).
 
 The configuration details of each machine may be found below.
 _Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdown_tables) to add/remove values from the table_.
