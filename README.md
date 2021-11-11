@@ -61,25 +61,26 @@ Machines within the network can only be accessed by Jump box.
 
 A summary of the access policies in place can be found in the table below.
 
-| Name     | Publicly Accessible | Allowed IP Addresses |
+| Name     |                      Publicly Accessible |                                     Allowed IP Addresses |
 |----------|---------------------|----------------------|
-| Jump Box | Yes/No              | 10.0.0.4 10.0.0.5    |
-|          |                     |                      |
-|          |                     |                      |
+| Jump Box                       | Yes - (*SSH Port 22*)|                                   |My local machine's IP address (What's my IP)                        |
+| WEBVM1, WEBVM2, WEBVM3         | NO                   |                                   |Webserver Load Balancer Public IP Address(20.83.104.100)            |
+| Webserver Load Balancer        | Yes - (HTTP port 80) |                                   |Any                                                                 |
+|ELK Stack Log Monitoring        | Yes - (Kibana port: 5601) (API calls on HTTP Port 9200   |(Kibana - Any) (HTTP API - 10.1.0.0/16                              |
+
 
 ### Elk Configuration
 
 Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because...
-- What is the main advantage of automating configuration with Ansible? services can be limited, system installaton and update can be streamlined, and processes become more replicable.
-
+- What is the main advantage of automating configuration with Ansible? processes can be repeated over and over again without the human errors of doing the same task over and over again.
+-
 The playbook implements the following tasks:
-- In 3-5 bullets, explain the steps of the ELK installation play. E.g., install Docker; download image; etc._
-- Install Docker
+- Install Docker (Installs Docker code to the selected server)
 - Download image
-- sudo systemctl
-- Start docker
-- Docker pull syberxsecurity/ansible
-- sudo docker container list -a
+- Install Python3-pip module (Installs the pip module that deals with packet management
+- Install Docker module (Installs Docker modules for pip)
+- Increse Memory (Provides enough memory for the ELK server to run)
+- Downloads and launches the Elk container (Downloads and launches the Elk container through specific ports)
 
 
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
