@@ -16,8 +16,8 @@ This document contains the following details:
 - Description of the Topologu
 - Access Policies
 - ELK Configuration
-  - Beats in Use
-  - Machines Being Monitored
+- Beats in Use
+- Machines Being Monitored
 - How to Use the Ansible Build
 
 
@@ -49,7 +49,7 @@ The machines on the internal network are not exposed to the public Internet.
 Only the Jumpbox/Ansible VM machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
 - My local machines IP (Address) (What's my IP)
 - Machines within the network can only be accessed by the Jump Box:
-- 
+
 - Jump Box
 - Public IP address : 20.112.74.83
 - Private IP address: 10.1.0.4
@@ -71,7 +71,7 @@ A summary of the access policies in place can be found in the table below.
 
 Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because...
 - What is the main advantage of automating configuration with Ansible? processes can be repeated over and over again without the human errors of doing the same task over and over again.
--
+
 The playbook implements the following tasks:
 - Install Docker (Installs Docker code to the selected server)
 - Download image
@@ -80,10 +80,6 @@ The playbook implements the following tasks:
 - Increse Memory (Provides enough memory for the ELK server to run)
 - Downloads and launches the Elk container (Downloads and launches the Elk container through specific ports)
 
-
-The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
-
-![TODO: Update the path with the name of your screenshot of docker ps output](Images/docker_ps_output.png)
 
 ### Target Machines & Beats
 This ELK server is configured to monitor the following machines:
